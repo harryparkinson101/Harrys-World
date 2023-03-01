@@ -1,0 +1,10 @@
+{
+  "name": "swiftfolio",
+  "description": "My project using GSAP and Three.js",
+  "type": "module",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
