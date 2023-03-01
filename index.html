@@ -7,6 +7,7 @@
   <title>Harrys World</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/07560bc89f.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </head>
 <body>
 <div id="header">
@@ -14,11 +15,11 @@
     <nav>
       <h1 class="name">HP</h1>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="header-text">
@@ -85,14 +86,14 @@
         <i class="fa-solid fa-code"></i>
         <h2>Web Design</h2>
         <p>Create beautifully styled and animated UI/UX websites using the most modern tools and  industry standards to help your business stand out from the crowd.</p>
-        <a href="#">Learn More</a>
+        <a href="#contact">Learn More</a>
       </div>
 
       <div>
         <i class="fa-solid fa-pen-ruler"></i>
         <h2>Convert Figma to React</h2>
         <p>Do you have a design just sitting there waiting to become something great?<br>Look no further than these sites I brought to life using React and discover new possibilities.</p>
-        <a href="#">Learn More</a>
+        <a href="#contact">Learn More</a>
       </div>
 
       <div>
@@ -100,13 +101,13 @@
         <h2>Full Stack Developement</h2>
         <p>Design and develop app infrastucture by builing the front and back-end using MERN stack.<br>
         Whether you have plans for the next big social media app or simply want to a nice UI that connects your company data to a database, you are in the right place! </p>
-        <a href="#">Learn More</a>
+        <a href="#contact">Learn More</a>
       </div>
     </div>
   </div>
 </div>
 <!--PORTFOLIO-->
-<div id="portfolio">
+<div id="projects">
   <div class="container">
     <h1 class="subtitle">My Projects</h1>
     <div class="project-list">
@@ -123,7 +124,7 @@
         <img src="images/datawave.png">
         <div class="layer">
           <h3>Datawave</h3>
-          <p>Datawave provides a visual approach to management making use of a built in calendar, a selection of charts to view data and easily manage customers and employees</p>
+          <p>A visual approach to managing your business </p>
           <a href="https://luminous-kulfi-7e5b4c.netlify.app/"><i class="fa-regular fa-eye"></i></a>
         </div>
       </div>
@@ -136,8 +137,35 @@
           <a href="https://eclectic-pastelito-0df6e2.netlify.app/"><i class="fa-regular fa-eye"></i></a>
         </div>
       </div>
+
+      <div class="project">
+        <img src="images/streamspot.png">
+        <div class="layer">
+          <h3>Streamspot</h3>
+          <p>This is a youtube clone built using React and Rapid API,<br> check it out!</p>
+          <a href="https://eclectic-pastelito-0df6e2.netlify.app/"><i class="fa-regular fa-eye"></i></a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/streamspot.png">
+        <div class="layer">
+          <h3>Streamspot</h3>
+          <p>This is a youtube clone built using React and Rapid API,<br> check it out!</p>
+          <a href="https://eclectic-pastelito-0df6e2.netlify.app/"><i class="fa-regular fa-eye"></i></a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/streamspot.png">
+        <div class="layer">
+          <h3>Streamspot</h3>
+          <p>This is a youtube clone built using React and Rapid API,<br> check it out!</p>
+          <a href="https://eclectic-pastelito-0df6e2.netlify.app/"><i class="fa-regular fa-eye"></i></a>
+        </div>
+      </div>
     </div>
-    <a href="#" class="btn">See More</a>
+    <a href="https://github.com/harryparkinson101"class="btn">See More</a>
   </div>
 </div>
 <!--CONTACT FORM-->
@@ -146,23 +174,29 @@
     <div class="row">
       <div class="contact-left">
         <h1 class="subtitle">Contact Me</h1>
-        <p>hpprogramming.tech@gmail.com</p>
-        <p>+44 7515609104</p>
+        <p><i class="fa-regular fa-envelope"></i>hpprogramming.tech@gmail.com</p>
+        <p><i class="fa-solid fa-mobile-screen"></i>+44 7515609104</p>
         <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/harryparkinson101"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/harryparkinson101/"><i class="fa-brands fa-linkedin"></i></a>
         </div>
+        <a href="images/my-cv.pd" class="btn btn2" download>Download CV</a>
       </div>
       <div class="contact-right">
         <form>
           <input type="text" name="Name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn btn2">Submit</button>
         </form>
       </div>
     </div>
   </div>
+  <div class="copyright">
+    <p>Copyright @ HP-Programming. Made with <i class="fas fa-heart"></i> by Harry Parkinson</p>
+  </div>
 </div>
-<script>
+<script defer>
 const tabLinks = document.getElementsByClassName("tab-links");
 const tabContents = document.getElementsByClassName("tab-contents");
 
