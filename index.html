@@ -14,13 +14,15 @@
   <div class="container">
     <nav>
       <h1 class="name">HP</h1>
-      <ul>
-        <li><a href="#home">Home</a></li>
+      <ul id="side-bar">
+        <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <i class="fas fa-times" onclick="closeMenu()"></i>
       </ul>
+      <i class="fas fa-bars" onclick="openMenu()"></i>
     </nav>
     <div class="header-text">
       <p>Modern UI/UX Designer</p>
@@ -142,8 +144,8 @@
         <img src="images/gpt3.png">
         <div class="layer">
           <h3>About GPT-3</h3>
-          <p>This is a youtube clone built using React and Rapid API,<br> check it out!</p>
-          <a href="https://eclectic-pastelito-0df6e2.netlify.app/"><i class="fa-regular fa-eye"></i></a>
+          <p>See how a figma design can be brought to life using React</p>
+          <a href="https://merry-cucurucho-e69dae.netlify.app/"><i class="fa-regular fa-eye"></i></a>
         </div>
       </div>
 
@@ -151,16 +153,16 @@
         <img src="images/gericht.png">
         <div class="layer">
           <h3>Gericht</h3>
-          <p>This is a youtube clone built using React and Rapid API,<br> check it out!</p>
-          <a href="https://eclectic-pastelito-0df6e2.netlify.app/"><i class="fa-regular fa-eye"></i></a>
+          <p>A restaurant app, designed in Figma and created in React</p>
+          <a href="https://taupe-lolly-1d6978.netlify.app/"><i class="fa-regular fa-eye"></i></a>
         </div>
       </div>
 
       <div class="project">
         <img src="images/streamspot.png">
         <div class="layer">
-          <h3>Streamspot</h3>
-          <p>This is a youtube clone built using React and Rapid API,<br> check it out!</p>
+          <h3>Solar System</h3>
+          <p>Explore the planets as you travel through this immersive 3D experience</p>
           <a href="https://eclectic-pastelito-0df6e2.netlify.app/"><i class="fa-regular fa-eye"></i></a>
         </div>
       </div>
@@ -174,8 +176,8 @@
     <div class="row">
       <div class="contact-left">
         <h1 class="subtitle">Contact Me</h1>
-        <p><i class="fa-regular fa-envelope"></i>hpprogramming.tech@gmail.com</p>
-        <p><i class="fa-solid fa-mobile-screen"></i>+44 7515609104</p>
+        <p><i class="fa-regular fa-envelope"></i>harryparkinson2207@gmail.com</p>
+        <p><i class="fa-solid fa-mobile-screen"></i>+44 7415609104</p>
         <div class="social-icons">
           <a href="https://github.com/harryparkinson101"><i class="fa-brands fa-github"></i></a>
           <a href="https://www.linkedin.com/in/harryparkinson101/"><i class="fa-brands fa-linkedin"></i></a>
@@ -183,33 +185,61 @@
         <a href="images/my-cv.pd" class="btn btn2" download>Download CV</a>
       </div>
       <div class="contact-right">
-        <form>
+        <form name="submit-to-google-sheet">
           <input type="text" name="Name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
           <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
           <button type="submit" class="btn btn2">Submit</button>
         </form>
+        <span id="msg"></span>
       </div>
     </div>
   </div>
   <div class="copyright">
-    <p>Copyright @ HP-Programming. Made with <i class="fas fa-heart"></i> by Harry Parkinson</p>
+    <p>Copyright ⓒ HP-Programming. Made with <i class="fas fa-heart"></i> by Harry Parkinson</p>
   </div>
 </div>
-<script defer>
-const tabLinks = document.getElementsByClassName("tab-links");
-const tabContents = document.getElementsByClassName("tab-contents");
+<script>
+  const tabLinks = document.getElementsByClassName("tab-links");
+  const tabContents = document.getElementsByClassName("tab-contents");
 
-const opentab = (tabname) => {
-  for (tabLink of tabLinks) {
-    tabLink.classList.remove("active-link");
+  const opentab = (tabname) => {
+    for (tab of tabLinks) {
+      tab.classList.remove("active-link");
+    }
+    for (tabContent of tabContents) {
+      tabContent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
   }
-  for (tabContent of tabContents) {
-    tabContent.classList.remove("active-tab");
+  
+  const sideBar = document.getElementById('side-bar');
+  const openMenu = () => {
+    sideBar.style.right = "0";
   }
-  event.currentTarget.classList.add("active-link");
-  document.getElementById(tabname).classList.add("active-tab");
-}
+  const closeMenu = () => {
+    sideBar.style.right = "-200px";
+  }
+
+  
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwlcmH-DbJBLy5_14Y7OKssgM059Nt4xI7_pKTM_AuIwe_v2udYbIlWzKcTHp46w9yY/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById('msg')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Thank you, your message has been recieved!"
+        setTimeout(function() {
+          msg.innerHTML = ""
+        }, 5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
+
 </body>
 </html>
