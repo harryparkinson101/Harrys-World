@@ -1,6 +1,6 @@
 {
   "name": "swiftfolio",
-  "description": "My project using GSAP and Three.js",
+  "description": "My portfolio",
   "type": "module",
   "dependencies": {
   },
